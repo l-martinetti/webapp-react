@@ -1,24 +1,14 @@
+import { useGlobalContext } from "../contexts/GlobalContext"
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+
 
 const MovieDetails = () => {
 
-    const api_url = import.meta.env.VITE_API_URL
+    const { movie, fetchMovie } = useGlobalContext();
     const { id } = useParams();
-    const [movie, setMovie] = useState(null);
 
-    const fetchMovie = () => {
-        axios.get(`${api_url}/${id}`)
-            .then(res => {
-                setMovie(res.data);
-            })
-            .catch(error => {
-                console.error('Error fetching movie details:', error);
-            })
-    }
-
-    useEffect(() => { fetchMovie() }, [])
+    useEffect(() => { fetchMovie(id) }, [id])
 
     return (
         <section className="container my-3">
