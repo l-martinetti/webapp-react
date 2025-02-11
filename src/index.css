@@ -2,3 +2,12 @@
     aspect-ratio: 3 / 4;
 
 }
+
+div.card {
+    width: calc(100% / 3 - 1rem);
+}
+
+.btn {
+    width: 6rem;
+    margin: 1rem;
+}
