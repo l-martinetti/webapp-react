@@ -1,7 +1,10 @@
+import MovieCard from "../components/MovieCard"
 
 const Homepage = () => {
     return (
-        <div>Homepage</div>
+        <div className="container pt-3">
+            <MovieCard />
+        </div>
     )
 }
 

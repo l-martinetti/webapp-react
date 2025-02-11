@@ -4,9 +4,7 @@ import Header from '../components/Header'
 const DefaultLayout = () => {
     return (
         <>
-            <header>
-                <Header />
-            </header>
+            <Header />
             <main>
                 <Outlet />
             </main>
